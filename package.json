@@ -1,0 +1,35 @@
+{
+  "name": "unit-test-library",
+  "version": "1.0.0",
+  "description": "Unit Test Library using Nodejs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "babel-node src --presets env",
+    "clean": "rm -r dist",
+    "start": "npm run clean && tsc-watch --project . --onSuccess \"npm run nodemon\"",
+    "nodemon": "nodemon ./dist/index.js",
+    "pre-commit": "lint",
+    "lint": "./node_modules/tslint/bin/tslint -c tslint.json -p tsconfig.json --exclude 'node_modules/**/*.{j,t}s'",
+    "lint:fix": "yarn lint -- --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanishkul/unit-test-library.git"
+  },
+  "author": "Tanish Kulshrestha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tanishkul/unit-test-library/issues"
+  },
+  "homepage": "https://github.com/tanishkul/unit-test-library#readme",
+  "dependencies": {
+    "tslint": "^5.12.1"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-preset-env": "1.7.0",
+    "nodemon": "1.18.7",
+    "tsc-watch": "1.0.31",
+    "typescript": "3.2.4"
+  }
+}
